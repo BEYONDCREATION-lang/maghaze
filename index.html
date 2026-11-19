@@ -58,6 +58,14 @@ h2{font-size:1.6rem;margin:0 0 6px}
 .stat{border-top:4px solid var(--brand)}
 .card{transition:transform .15s}
 .card:hover{transform:translateY(-3px)}
+.cta{background:var(--soft);border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:10px;justify-content:center}
+.code{font-size:.8rem;color:var(--muted)}
+.thumb.y svg{stroke:#5a4200}
+.gt{grid-column:1/-1;margin:14px 0 0;font-size:1.2rem}
+.legend{display:flex;gap:16px;flex-wrap:wrap;font-size:.9rem;color:var(--muted);margin:0 0 18px}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:50%;margin-left:6px;vertical-align:-1px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips span{background:var(--soft);color:var(--brand-d);font-size:.8rem;padding:0 10px;border-radius:99px}
 @media(prefers-reduced-motion:reduce){.card{transition:none}.card:hover{transform:none}}
 footer{padding:24px 0;text-align:center;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line)}
 @media(max-width:720px){nav{gap:12px;font-size:.85rem}.about,.contact{grid-template-columns:1fr}}
@@ -72,10 +80,10 @@ footer{padding:24px 0;text-align:center;color:var(--muted);font-size:.9rem;borde
 <main id="top">
 <div class="wrap hero">
 <h1>ملک مناسب را بدون دردسر پیدا کنید</h1>
-<p>خرید، فروش و اجاره آپارتمان، ویلا و مغازه با مشاوره صادقانه و قیمت‌گذاری واقعی.</p>
+<p>خرید، فروش و رهن و اجاره ملک در اصفهان، با مشاوره صادقانه و قیمت‌گذاری واقعی.</p>
 <div class="search" role="search">
 <select id="fDeal" aria-label="نوع معامله"><option value="">خرید و اجاره</option><option>خرید</option><option>اجاره</option></select>
-<select id="fType" aria-label="نوع ملک"><option value="">همه ملک‌ها</option><option>آپارتمان</option><option>ویلا</option><option>مغازه</option></select>
+<select id="fType" aria-label="نوع ملک"><option value="">همه ملک‌ها</option><option>آپارتمان</option><option>دربست</option><option>خانه</option><option>مغازه</option></select>
 <select id="fRoom" aria-label="تعداد خواب"><option value="">هر تعداد خواب</option><option value="1">۱ خواب</option><option value="2">۲ خواب</option><option value="3">۳ خواب یا بیشتر</option></select>
 <a class="btn" href="#listings">مشاهده نتایج</a>
 </div>
@@ -84,6 +92,7 @@ footer{padding:24px 0;text-align:center;color:var(--muted);font-size:.9rem;borde
 <section id="listings"><div class="wrap">
 <h2>ملک‌های موجود</h2>
 <p class="sub" id="count"></p>
+<div class="legend"><span><i style="background:#15935a"></i>اجاره</span><span><i style="background:#2f7fc4"></i>خرید</span><span><i style="background:#f5b400"></i>مغازه</span></div>
 <div class="grid" id="grid"></div>
 </div></section>
 
@@ -91,11 +100,11 @@ footer{padding:24px 0;text-align:center;color:var(--muted);font-size:.9rem;borde
 <div class="about">
 <div>
 <h2>درباره املاک خانه سبز</h2>
-<p>بیش از ۱۰ سال است که در کنار خانواده‌ها هستیم. هر ملک قبل از معرفی بازدید و مدارکش بررسی می‌شود تا فقط گزینه‌های قابل اعتماد به شما نشان داده شود.</p>
+<p>بیش از ۱۵ سال است که در اصفهان، در محدوده کهندژ، کنار خانواده‌ها هستیم و در خرید، فروش و رهن و اجاره‌ی ملک همراهشان بوده‌ایم. هدف ما معامله‌ای روشن و مطمئن برای هر دو طرف است.</p>
 </div>
 <div class="stats">
-<div class="stat"><b>۱۰+</b>سال سابقه</div>
-<div class="stat"><b>۱۲۰۰+</b>معامله موفق</div>
+<div class="stat"><b>۱۵+</b>سال سابقه</div>
+<div class="stat"><b>۱۰٬۰۰۰+</b>معامله</div>
 </div>
 </div>
 <div class="services">
@@ -109,16 +118,10 @@ footer{padding:24px 0;text-align:center;color:var(--muted);font-size:.9rem;borde
 <div class="contact">
 <div>
 <h2>تماس با ما</h2>
-<p class="sub">برای بازدید یا مشاوره رایگان تماس بگیرید.</p>
-<p>تلفن: <a href="tel:+982100000000" dir="ltr">۰۲۱-۰۰۰۰۰۰۰۰</a><br>آدرس: خیابان نمونه، پلاک ۱۲<br>ساعت کار: ۹ تا ۱۸، شنبه تا پنجشنبه</p>
+<p class="sub">برای بازدید یا اطلاع از ملک‌های جدید، به ما سر بزنید یا عضو کانال ایتا شوید.</p>
+<p>آدرس: اصفهان، خیابان اشرف اصفهانی (کهندژ)، جنب پمپ بنزین افق، کوچه ۸، داخل کوچه املاک خانه سبز<br>ساعت کار: شنبه تا چهارشنبه ۱۰ تا ۱۲ و ۱۶:۳۰ تا ۲۰:۳۰<br>پنجشنبه: ۱۰ تا ۱۲</p>
 </div>
-<form id="form">
-<input id="name" placeholder="نام شما" aria-label="نام شما" required>
-<input id="phone" placeholder="شماره تماس" aria-label="شماره تماس" inputmode="tel" required>
-<textarea id="msg" rows="3" placeholder="چه ملکی می‌خواهید؟" aria-label="پیام"></textarea>
-<button class="btn" type="submit">درخواست تماس</button>
-<p class="note" id="ok" role="status"></p>
-</form>
+<div class="cta"><b>فایل‌های تازه را در کانال ایتا ببینید</b><span class="note">ملک‌های جدید و کد فایل‌ها در کانال ما منتشر می‌شود.</span><a class="btn" href="https://eitaa.com/khanesabz3" target="_blank" rel="noopener">ورود به کانال ایتا</a></div>
 </div>
 </div></section>
 </main>
@@ -128,28 +131,34 @@ footer{padding:24px 0;text-align:center;color:var(--muted);font-size:.9rem;borde
 var HOME='<svg viewBox="0 0 64 64"><path d="M8 30 32 10l24 20M14 26v28h36V26M26 54V38h12v16"/></svg>';
 var VILLA='<svg viewBox="0 0 64 64"><path d="M6 32 32 12l26 20M12 28v26h40V28M22 54V40h8v14M38 36h10v8H38"/></svg>';
 var SHOP='<svg viewBox="0 0 64 64"><path d="M8 24 12 10h40l4 14M8 24h48v30H8zM24 54V38h16v16"/></svg>';
-var GR={"آپارتمان":"linear-gradient(135deg,#15935a,#4cc3a0)","ویلا":"linear-gradient(135deg,#f5a623,#ee7b3b)","مغازه":"linear-gradient(135deg,#2f7fc4,#6fb6ea)"};
+var GR={g:"linear-gradient(135deg,#15935a,#4cc3a0)",b:"linear-gradient(135deg,#2f7fc4,#6fb6ea)",y:"linear-gradient(135deg,#f5b400,#ffd75e)"};
+function col(p){return p.type==="مغازه"?"y":p.deal==="اجاره"?"g":"b"}
+var RK={g:0,b:1,y:2},GT={g:"اجاره",b:"خرید",y:"مغازه"};
 var P=[
-{t:"آپارتمان ۲ خوابه نوساز",type:"آپارتمان",deal:"خرید",loc:"تهران، منطقه ۵",m:85,r:2,price:"۴ میلیارد و ۲۰۰ میلیون تومان"},
-{t:"آپارتمان ۳ خوابه با پارکینگ",type:"آپارتمان",deal:"اجاره",loc:"تهران، منطقه ۲",m:120,r:3,price:"ودیعه ۸۰۰ میلیون + ماهی ۲۵ میلیون"},
-{t:"ویلا باغ با استخر",type:"ویلا",deal:"خرید",loc:"شهریار",m:400,r:4,price:"۱۲ میلیارد تومان"},
-{t:"مغازه تجاری سر نبش",type:"مغازه",deal:"اجاره",loc:"تهران، منطقه ۶",m:40,r:0,price:"ودیعه ۱ میلیارد + ماهی ۴۰ میلیون"},
-{t:"آپارتمان ۱ خوابه نزدیک مترو",type:"آپارتمان",deal:"اجاره",loc:"تهران، منطقه ۷",m:52,r:1,price:"ودیعه ۳۰۰ میلیون + ماهی ۱۲ میلیون"},
-{t:"ویلای دوبلکس ۳ خوابه",type:"ویلا",deal:"اجاره",loc:"کرج",m:210,r:3,price:"ودیعه ۱ میلیارد + ماهی ۳۰ میلیون"}
+{c:201,deal:"اجاره",type:"مغازه",t:"مغازه دو نبش",loc:"خیابان کهندژ، کوچه ۶۰.۱",m:100,r:0,price:"رهن ۱۰۰ میلیون + اجاره ۲۵ میلیون",f:["دو نبش","کف بتن","دیوار سفید","آب، برق و گاز","چالهٔ مکانیکی"]},
+{c:1052,deal:"اجاره",type:"آپارتمان",t:"آپارتمان ۲ خوابه، طبقه دوم",loc:"خیابان کهندژ",r:2,price:"رهن ۲۰۰ میلیون + اجاره ۱۵ میلیون",f:["طبقه دوم","کف سرامیک","آشپزخانه اپن و MDF","پکیج","پارکینگ دارد","بدون آسانسور و انباری"]},
+{c:1070,deal:"اجاره",type:"آپارتمان",t:"آپارتمان ۲ خوابه، طبقه دوم",loc:"خیابان بابک",m:100,r:2,price:"رهن ۴۰۰ میلیون + اجاره ۲۱ میلیون",f:["طبقه دوم","کف سرامیک","آشپزخانه اپن و MDF","کمد دیواری در هر دو خواب","پارکینگ دارد","بدون آسانسور"]},
+{c:1068,deal:"اجاره",type:"آپارتمان",t:"آپارتمان ۱ خوابه، همکف",loc:"خیابان کهندژ، کوچه ۳۷",m:85,r:1,price:"رهن ۳۰۰ میلیون + اجاره ۱۵ میلیون",f:["همکف","راه مجزا","کف سرامیک","کمد دیواری","دیوار نقاشی‌شده","آشپزخانه اپن و MDF","پارکینگ در حیاط"]},
+{c:1069,deal:"اجاره",type:"آپارتمان",t:"آپارتمان ۳ خوابه",loc:"خیابان خرازی، کوچه شهید تسلیمی",m:200,r:3,price:"رهن ۳۰۰ میلیون + اجاره ۱۵ میلیون",f:["منفی ۶۰ (قدیمی)","کف موزاییک","پارکینگ در حد موتور"]},
+{c:1066,deal:"اجاره",type:"دربست",t:"دربست با سالن بزرگ",loc:"خیابان عشوریون، لادان",m:90,r:0,price:"رهن کامل ۴۰۰ میلیون",f:["دربست","سالن بزرگ","حیاط‌دار (ورود ماشین به حیاط)","بدون اتاق خواب"]},
+{c:1065,deal:"اجاره",type:"آپارتمان",t:"آپارتمان ۲ خوابه، طبقه اول",loc:"خیابان کهندژ، کوچه ۲۰",m:110,r:2,price:"رهن ۲۰۰ میلیون + اجاره ۲۰ میلیون",f:["طبقه اول","کف سرامیک","حیاط‌دار (ماشین در حیاط)","تازه بازسازی و نقاشی‌شده"]},
+{c:1310,deal:"خرید",type:"آپارتمان",t:"آپارتمان نوساز، طبقه چهارم",loc:"کهندژ، کوچه ۱۴",m:95,price:"۱۲ میلیارد و ۵۰۰ میلیون تومان",f:["طبقه چهارم","نوساز","پارکینگ","انباری","کمد دیواری","سند شش‌دانگ"]},
+{c:1314,deal:"خرید",type:"خانه",t:"ملک دو طبقه",loc:"کهندژ",m:150,price:"۱۴ میلیارد تومان",f:["دو طبقه","بدون پارکینگ","سند شش‌دانگ"]},
+{c:154,deal:"خرید",type:"آپارتمان",t:"آپارتمان ۲ خوابه نوساز، طبقه دوم",loc:"بعد از فلکه رهنان، جنب مخابرات",m:60,r:2,price:"۳ میلیارد و ۹۰۰ میلیون تومان",f:["طبقه دوم","نوساز","پارکینگ","انباری","کمد دیواری","سند شش‌دانگ"]},
 ];
 var fa=function(n){return String(n).replace(/\d/g,function(d){return"۰۱۲۳۴۵۶۷۸۹"[d]})};
 var $=function(i){return document.getElementById(i)};
 function draw(){
 var d=$("fDeal").value,t=$("fType").value,r=$("fRoom").value;
-var L=P.filter(function(p){return(!d||p.deal===d)&&(!t||p.type===t)&&(!r||(r==="3"?p.r>=3:p.r===+r))});
+var L=P.filter(function(p){return(!d||p.deal===d)&&(!t||p.type===t)&&(!r||(r==="3"?p.r>=3:p.r===+r))}).sort(function(a,b){return RK[col(a)]-RK[col(b)]||b.c-a.c});var last="";
 $("count").textContent=L.length?fa(L.length)+" ملک پیدا شد":"";
 $("grid").innerHTML=L.length?L.map(function(p){
-var ic=p.type==="ویلا"?VILLA:p.type==="مغازه"?SHOP:HOME;
-return '<article class="card"><div class="thumb" style="background:'+GR[p.type]+'">'+ic+'<span class="tag'+(p.deal==="اجاره"?' rent':'')+'">'+p.deal+'</span></div><div class="body"><h3>'+p.t+'</h3><div class="loc">'+p.loc+'</div><div class="facts"><span>'+fa(p.m)+' متر</span>'+(p.r?'<span>'+fa(p.r)+' خواب</span>':'')+'</div><div class="price">'+p.price+'</div></div></article>'
+var ic=p.type==="آپارتمان"?HOME:p.type==="مغازه"?SHOP:VILLA;
+var h=col(p)!==last?(last=col(p),'<h3 class="gt">'+GT[col(p)]+'</h3>'):'';
+return h+'<article class="card"><div class="thumb'+(col(p)==="y"?' y':'')+'" style="background:'+GR[col(p)]+'">'+ic+'<span class="tag'+(p.deal==="اجاره"?' rent':'')+'">'+p.deal+'</span></div><div class="body"><div class="code">کد '+fa(p.c)+'</div><h3>'+p.t+'</h3><div class="loc">'+p.loc+'</div><div class="facts">'+(p.m?'<span>'+fa(p.m)+' متر</span>':'')+(p.r?'<span>'+fa(p.r)+' خواب</span>':'')+'</div><div class="chips">'+p.f.map(function(x){return'<span>'+x+'</span>'}).join("")+'</div><div class="price">'+p.price+'</div></div></article>'
 }).join(""):'<div class="empty" style="grid-column:1/-1">ملکی با این فیلتر پیدا نشد. فیلترها را تغییر دهید یا برای پیدا کردن ملک مناسب با ما تماس بگیرید.</div>';
 }
 ["fDeal","fType","fRoom"].forEach(function(i){$(i).addEventListener("change",draw)});
-$("form").addEventListener("submit",function(e){e.preventDefault();$("ok").textContent="درخواست شما ثبت شد. این فرم نمایشی است؛ برای دریافت پیام‌ها باید به سرویس فرم متصل شود.";e.target.reset()});
 draw();
 </script>
 </body>
